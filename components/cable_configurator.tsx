@@ -1,15 +1,15 @@
 import { useState, useMemo } from "react";
-import { FileDown } from "lucide-react"; // Import nowej ikony
-import { generatePDF } from "@/utils/pdf-generator";
-import { Zap, Ruler, CheckCircle, AlertTriangle } from "lucide-react";
+import { calculateInstallation } from "./calculator-logic";
+import { Zap, Ruler, CheckCircle, AlertTriangle, FileDown } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { calculateInstallation } from "@/utils/calculator-logic";
 
-export const CableCalculator = () => {
+import "../app/globals.css";
+
+export default function CableCalculator() {
   const [power, setPower] = useState(15);
   const [length, setLength] = useState(30);
   const [voltage, setVoltage] = useState(400);
@@ -19,10 +19,6 @@ export const CableCalculator = () => {
     () => calculateInstallation(power, length, voltage, cosfi),
     [power, length, voltage, cosfi],
   );
-
-  const handleSelection = (value) => {
-    setVoltage(value);
-  };
 
   return (
     <Card className="w-full max-w-2xl mx-auto shadow-2xl border-none">
@@ -44,35 +40,19 @@ export const CableCalculator = () => {
                 <RadioGroup
                   className="flex flex-row space-x-4"
                   defaultValue="400"
+                  value={voltage}
+                  onValueChange={(val) => setVoltage(val)}
                 >
                   <div className="flex items-center space-x-2">
-                    <Input
-                      type="radio"
-                      onChange={(e) => handleSelection(e.target.value)}
-                      name="voltage"
-                      id="h1"
-                      value="380"
-                    />
+                    <RadioGroupItem id="h1" value="380" />
                     <Label htmlFor="h1">380V</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Input
-                      type="radio"
-                      name="voltage"
-                      onChange={(e) => handleSelection(e.target.value)}
-                      id="h2"
-                      value="400"
-                    />
+                    <RadioGroupItem id="h2" value="400" />
                     <Label htmlFor="h2">400V</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Input
-                      type="radio"
-                      name="voltage"
-                      onChange={(e) => handleSelection(e.target.value)}
-                      id="h3"
-                      value="440"
-                    />
+                    <RadioGroupItem id="h3" value="440" />
                     <Label htmlFor="h3">440V</Label>
                   </div>
                 </RadioGroup>
@@ -198,4 +178,4 @@ export const CableCalculator = () => {
       </CardContent>
     </Card>
   );
-};
+}
