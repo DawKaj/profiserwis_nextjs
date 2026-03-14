@@ -1,0 +1,3 @@
+https://www.jprojects.pl/
+https://tx.shadcn.com/
+https://vercel.com/templates/ecommerce?filterSlug=marketing-sites&framework=next.js&framework=next.js&type=marketing-sites&type=documentation&type=documentation&type=marketing-sites&type=ecommerce
