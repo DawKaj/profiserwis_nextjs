@@ -21,9 +21,9 @@ export default function KalkulatorPage() {
   );
 
   return (
-    <Card className="w-full max-w-2xl mx-auto shadow-2xl border-none mt-6">
+    <Card className="w-full max-w-2xl mx-auto shadow-2xl border-none mt-6 py-0">
       <CardHeader className="bg-slate-900 text-white rounded-t-xl">
-        <CardTitle className="flex items-center gap-2 text-lg uppercase tracking-widest">
+        <CardTitle className="flex items-center gap-4 text-lg uppercase tracking-widest">
           <Zap className="text-yellow-400" /> Kalkulator Przekroju Kabla
         </CardTitle>
       </CardHeader>
@@ -57,21 +57,31 @@ export default function KalkulatorPage() {
                   </div>
                 </RadioGroup>
               </div>
-              <div>
-                <Label className="text-sm font-bold text-slate-500 uppercase flex items-center gap-2">
-                  cos fi
-                </Label>
-                <Input
-                  type="number"
-                  value={cosfi}
-                  min={0.1}
-                  max={1}
-                  step={0.05}
-                  onChange={(e) => setCosfi(parseFloat(e.target.value) || 0.85)}
-                  className="w-25 text-center font-black bg-slate-100 text-slate-800  border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
-              </div>
             </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="flex justify-between">
+              <Label className="text-sm font-bold text-slate-500 flex items-center gap-2">
+                cosFi
+              </Label>
+              <Input
+                type="number"
+                value={cosfi}
+                min={0.1}
+                max={1}
+                step={0.05}
+                onChange={(e) => setCosfi(parseFloat(e.target.value) || 0.85)}
+                className="w-25 text-center font-black bg-slate-100 text-slate-800  border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+            <Slider
+              value={[cosfi]}
+              onValueChange={(v) => setCosfi(v[0])}
+              min={0.1}
+              max={1}
+              step={0.05}
+            />
           </div>
           <div className="space-y-4">
             <div className="flex justify-between">
@@ -83,6 +93,7 @@ export default function KalkulatorPage() {
                 value={power}
                 min={1}
                 max={130}
+                step={0.5}
                 onChange={(e) => setPower(parseFloat(e.target.value) || 1)}
                 className="w-25 text-center font-black bg-slate-100 text-slate-800  border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
