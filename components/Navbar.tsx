@@ -25,11 +25,20 @@ export default function Navbar() {
         </li>
         <li className="py-1">
           <Link
-            href="/kontakt"
+            href="/serwis"
             className="link hover:text-black dark:hover:text-white"
             // id="linkServices"
           >
             serwis
+          </Link>
+        </li>
+        <li className="py-1">
+          <Link
+            href="/prefabrykacja"
+            className="link hover:text-black dark:hover:text-white"
+            // id="linkServices"
+          >
+            prefabrykacja
           </Link>
         </li>
         <li className="py-1">

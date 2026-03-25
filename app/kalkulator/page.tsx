@@ -21,7 +21,7 @@ export default function KalkulatorPage() {
   );
 
   return (
-    <div className="flex flex-col gap-8 ">
+    <div className=" gap-8 ">
       <Card className="w-full max-w-2xl mx-auto shadow-2xl border-none mt-6 py-0">
         <CardHeader className="bg-slate-900 text-white rounded-t-xl">
           <CardTitle className="flex items-center gap-4 text-lg uppercase tracking-widest">

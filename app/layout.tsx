@@ -47,15 +47,13 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system">
           <Cookies />
-          <div className="flex flex-row h-full" style={{ height: "100%" }}>
+          <div className="flex flex-row h-full">
             <AsidePanel />
             <main
-              className="max-w-245 flex flex-col mx-auto justify-center md:text-left  border border-solid border-borderColorLight"
-              style={{ height: "100%" }}
+              className="max-w-245 h-full flex flex-col  mx-auto justify-center md:text-left  border border-solid border-borderColorLight"
+              style={{ padding: "4rem" }}
             >
-              <div className=" md:p-16" style={{ padding: "4rem" }}>
-                {children}
-              </div>
+              {children}
             </main>
           </div>
           <BottomBar />

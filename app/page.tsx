@@ -1,6 +1,6 @@
 export default async function HomePage() {
   return (
-    <div className="flex flex-col gap-8 ">
+    <div className="gap-8 ">
       <div className="text-silver dark:text-silverLight uppercase text-sm font-medium tracking-wide">
         <span>01. Na czas, na miejsce, napewno</span>
       </div>

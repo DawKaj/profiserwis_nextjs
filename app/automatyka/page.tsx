@@ -1,6 +1,6 @@
 export default function AutomatykaPage() {
   return (
-    <div className="flex flex-col gap-8 ">
+    <div className="gap-8 ">
       <div className="text-silver dark:text-silverLight uppercase text-sm font-medium tracking-wide">
         <span>02. Od koncepcji do realizacji</span>
       </div>
