@@ -1,3 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&Roboto+Mono:wght@100..700&family=Rubik:wght@300..900&family=JetBrains+Mono:wght@100..800&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Roboto"; /* Define the color variable in the theme */
+  --font-mono: "JetBrains Mono, Roboto Mono,  monospace";
+  --default-font-family:
+    var(--font-mono), var(--font-sans), sans-serif; /* Define the default font family using the color variable */
+  --color-text-main: var(--txt-color);
+  --color-text-dark: var(--txt-color-dark);
+}
+
+:root {
+  --txt-color: #696969;
+  --accent-color: rgb(0, 0, 0);
+  --border-color: rgb(0, 0, 0);
+  --cookies-bg-color: rgb(255, 255, 255);
+  --cookies-border-color: #696969;
+}
+
+.dark {
+  --txt-color: #9e9e9e;
+  --bg-color-sidebar: #343434;
+  --accent-color: rgb(255, 255, 255);
+  --border-color: rgb(255, 255, 255);
+  --cookies-bg-color: rgb(0, 0, 0);
+  --cookies-border-color: rgb(52, 52, 52);
+}
+
+.link {
+  transition:
+    border-color 0.5s ease 0s,
+    color 0.5s ease 0s;
+
+  border-style: solid;
+  border-width: 0px 0px 2px;
+  border-color: transparent;
+
+  &.active {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+}

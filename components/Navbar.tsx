@@ -1,55 +1,57 @@
-"use client";
-
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="text-xl font-bold">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/next.svg" width={40} height={40} alt="Logo" />
-            </Link>
-          </div>
-
-          {/* Desktop menu */}
-          <div className="hidden md:flex space-x-6">
-            <Link href="/">Home</Link>
-            <Link href="/about">O nas</Link>
-            <Link href="/kalkulator">Usługi</Link>
-            <Link href="/kontakt">Kontakt</Link>
-          </div>
-
-          {/* Mobile button */}
-          <button className="md:hidden" onClick={() => setOpen(!open)}>
-            ☰
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden px-6 pb-4 space-y-2">
-          <Link href="/" className="block">
-            Home
+    <nav>
+      <ul className="text-base uppercase font-bold text-gray dark:text-silverLight ">
+        <li className="py-1">
+          <Link
+            href="/"
+            className="link hover:text-black active:text-black dark:hover:text-white dark:active:text-white"
+            // id="linkMain"
+          >
+            strona główna
           </Link>
-          <Link href="/about" className="block">
-            O nas
+        </li>
+        <li className="py-1">
+          <Link
+            href="/automatyka"
+            className="link hover:text-black dark:hover:text-white"
+            // id="linkAutomation"
+          >
+            automatyka
           </Link>
-          <Link href="/services" className="block">
-            Usługi
+        </li>
+        <li className="py-1">
+          <Link
+            href="/kontakt"
+            className="link hover:text-black dark:hover:text-white"
+            // id="linkServices"
+          >
+            serwis
           </Link>
-          <Link href="/contact" className="block">
-            Kontakt
+        </li>
+        <li className="py-1">
+          <Link
+            href="/kalkulator"
+            className="link hover:text-black dark:hover:text-white"
+            // id="linkServices"
+          >
+            kalkulator
           </Link>
-        </div>
-      )}
+        </li>
+        {/* <li className="py-1">
+          <Link
+            href="/o_nas"
+            className="link hover:text-black dark:hover:text-white"
+            activeClassName="active"
+            // id="linkAbout"
+          >
+            o nas
+          </Link>
+        </li> */}
+      </ul>
     </nav>
   );
 }
