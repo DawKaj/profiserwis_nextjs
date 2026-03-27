@@ -8,16 +8,15 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Roboto"; /* Define the color variable in the theme */
+  --font-sans: "Rubik"; /* Define the color variable in the theme */
   --font-mono: "JetBrains Mono, Roboto Mono,  monospace";
   --default-font-family:
-    var(--font-mono), var(--font-sans), sans-serif; /* Define the default font family using the color variable */
-  --color-text-main: var(--txt-color);
-  --color-text-dark: var(--txt-color-dark);
-}
-
-:root {
-  --txt-color: #696969;
+    "Roboto Mono", sans-serif; /* Define the default font family using the color variable */
+  --tracking-1: 0.32em;
+  --color-g-100: rgb(211, 211, 211);
+  --color-g-200: rgb(25, 25, 25);
+  --color-g-300: rgb(52, 52, 52);
+  --color-g-400: rgb(105, 105, 105);
   --accent-color: rgb(0, 0, 0);
   --border-color: rgb(0, 0, 0);
   --cookies-bg-color: rgb(255, 255, 255);
@@ -25,10 +24,10 @@
 }
 
 .dark {
-  --txt-color: #9e9e9e;
+  --color-app-text: #9e9e9e;
   --bg-color-sidebar: #343434;
   --accent-color: rgb(255, 255, 255);
-  --border-color: rgb(255, 255, 255);
+  --border-color: rgb(125, 0, 0);
   --cookies-bg-color: rgb(0, 0, 0);
   --cookies-border-color: rgb(52, 52, 52);
 }

@@ -21,8 +21,8 @@ export default function KalkulatorPage() {
   );
 
   return (
-    <div className=" gap-8 ">
-      <Card className="w-full max-w-2xl mx-auto shadow-2xl border-none mt-6 py-0">
+    <div className="w-full gap-8 ">
+      <Card className="max-w-2xl mx-auto shadow-2xl border-none mt-6 py-0">
         <CardHeader className="bg-slate-900 text-white rounded-t-xl">
           <CardTitle className="flex items-center gap-4 text-lg uppercase tracking-widest">
             <Zap className="text-yellow-400" /> Kalkulator Przekroju Kabla

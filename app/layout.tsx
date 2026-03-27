@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Roboto, Roboto_Mono, Rubik, JetBrains_Mono } from "next/font/google";
-import Footer from "@/components/Footer";
 
 import "./globals.css";
 import Cookies from "@/components/cookies";
@@ -12,12 +11,10 @@ const roboto = Roboto({
   weight: "400",
 });
 
-const robotoMono = Roboto_Mono({
-  variable: "--font-roboto-mono",
-});
+const robotoMono = Roboto_Mono({});
 
 const rubik = Rubik({
-  variable: "--font-rubik",
+  weight: "400",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -42,7 +39,7 @@ export default function RootLayout({
       className="{roboto.className} {robotoMono.className} {rubik.className} {jetbrainsMono.className}"
     >
       <body
-        className="flex flex-col max-w-300 bg-bgColorLight dark:bg-bgColorDark"
+        className="flex flex-col max-w-300 bg-g-100 dark:bg-g-200 text-g-400"
         style={{ height: "100vh", margin: "auto" }}
       >
         <ThemeProvider attribute="class" defaultTheme="system">
@@ -50,7 +47,7 @@ export default function RootLayout({
           <div className="flex flex-row h-full">
             <AsidePanel />
             <main
-              className="max-w-245 h-full flex flex-col  mx-auto justify-center md:text-left  border border-solid border-borderColorLight"
+              className="max-w-225 h-full flex flex-col  mx-auto justify-center md:text-left"
               style={{ padding: "4rem" }}
             >
               {children}
