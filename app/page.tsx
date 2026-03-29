@@ -1,6 +1,8 @@
-export default async function HomePage() {
+"use client";
+
+export default function HomePage() {
   return (
-    <div className="w-full gap-8">
+    <div className="w-full gap-8 text-center md:text-left">
       <h1 className="grid  mb-8">
         <span className="text-white dark:text-g-400 text-base uppercase mb-8 tracking-1">
           Na czas, na miejsce, napewno
@@ -9,7 +11,7 @@ export default async function HomePage() {
           Kompetentny Partner w automatyce i robotyce
         </span>
       </h1>
-      <p className="text-gray-400 text-2xl tracking-wide">
+      <p className="text-g-400 text-2xl tracking-wide">
         Jesteśmy firmą inżynierską z kilkunastoletnim doświadczeniem w branży
         automatyki i robotyki przemysłowej.
         <br />

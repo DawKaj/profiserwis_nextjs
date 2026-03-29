@@ -2,7 +2,7 @@ import Navbar from "./navbar";
 
 export default function AsidePanel() {
   return (
-    <header className="hidden md:flex flex-col justify-between inset-y-0 left-0 zIndex-500 w-[300px] bg-white dark:bg-grey-300 ">
+    <header className="hidden md:flex flex-col fixed justify-between inset-y-0 left-0 zIndex-500 w-75 bg-white dark:bg-grey-300 ">
       <div className="flex-25 p-6"></div>
       <div className="flex flex-col flex-50 justify-center leading-8  p-6 ">
         <Navbar />

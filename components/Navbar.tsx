@@ -34,6 +34,15 @@ export default function Navbar() {
         </li>
         <li className="py-1">
           <Link
+            href="/zaopatrzenie"
+            className="link hover:text-black dark:hover:text-white"
+            // id="linkServices"
+          >
+            zaopatrzenie
+          </Link>
+        </li>
+        <li className="py-1">
+          <Link
             href="/prefabrykacja"
             className="link hover:text-black dark:hover:text-white"
             // id="linkServices"

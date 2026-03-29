@@ -8,6 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { generatePDF } from "@/components/pdf-generator";
 
 export default function KalkulatorPage() {
   const [power, setPower] = useState(15);
@@ -21,15 +22,15 @@ export default function KalkulatorPage() {
   );
 
   return (
-    <div className="w-full gap-8 ">
-      <Card className="max-w-2xl mx-auto shadow-2xl border-none mt-6 py-0">
-        <CardHeader className="bg-slate-900 text-white rounded-t-xl">
-          <CardTitle className="flex items-center gap-4 text-lg uppercase tracking-widest">
+    <div className=" max-w-300 gap-8 ">
+      <div className=" grid shadow-2xl border-none mt-6 py-0">
+        <div className="bg-slate-900 text-white rounded-t-xl">
+          <div className="flex items-center gap-4 text-lg uppercase tracking-widest">
             <Zap className="text-yellow-400" /> Kalkulator Przekroju Kabla
-          </CardTitle>
-        </CardHeader>
+          </div>
+        </div>
 
-        <CardContent className="p-8 space-y-12">
+        <div className="p-8 space-y-12">
           {/* Suwaki */}
           <div className="space-y-10">
             <div className="space-y-4">
@@ -41,8 +42,8 @@ export default function KalkulatorPage() {
                   <RadioGroup
                     className="flex flex-row space-x-4"
                     defaultValue="400"
-                    value={voltage}
-                    onValueChange={(val) => setVoltage(val)}
+                    value={voltage.toString()}
+                    onValueChange={(val) => setVoltage(Number(val))}
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem id="h1" value="380" />
@@ -131,7 +132,6 @@ export default function KalkulatorPage() {
               />
             </div>
           </div>
-
           {/* Wyniki Obliczeń */}
           <div className="grid grid-cols-3 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-100">
             <div className="text-center">
@@ -159,7 +159,6 @@ export default function KalkulatorPage() {
               </p>
             </div>
           </div>
-
           {/* Rekomendacja Finałowa */}
           <div
             className={`p-8 rounded-2xl flex items-center justify-between shadow-inner transition-all ${
@@ -183,6 +182,7 @@ export default function KalkulatorPage() {
               />
             )}
           </div>
+          {/*
           <button
             onClick={() => generatePDF(power, length, results)}
             className="w-full mt-4 flex items-center justify-center gap-2 py-3 px-4 bg-slate-800 text-white rounded-xl hover:bg-slate-700 transition-colors font-bold uppercase tracking-wider text-sm"
@@ -190,8 +190,9 @@ export default function KalkulatorPage() {
             <FileDown size={18} />
             Pobierz raport PDF
           </button>
-        </CardContent>
-      </Card>
+          */}
+        </div>
+      </div>
     </div>
   );
 }

@@ -40,8 +40,8 @@ export default function CableCalculator() {
                 <RadioGroup
                   className="flex flex-row space-x-4"
                   defaultValue="400"
-                  value={voltage}
-                  onValueChange={(val) => setVoltage(val)}
+                  value={voltage.toString()}
+                  onValueChange={(val) => setVoltage(Number(val))}
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem id="h1" value="380" />
@@ -168,6 +168,7 @@ export default function CableCalculator() {
             <AlertTriangle size={48} className="text-red-500 animate-bounce" />
           )}
         </div>
+        {/*
         <button
           onClick={() => generatePDF(power, length, results)}
           className="w-full mt-4 flex items-center justify-center gap-2 py-3 px-4 bg-slate-800 text-white rounded-xl hover:bg-slate-700 transition-colors font-bold uppercase tracking-wider text-sm"
@@ -175,6 +176,7 @@ export default function CableCalculator() {
           <FileDown size={18} />
           Pobierz raport PDF
         </button>
+        */}
       </CardContent>
     </Card>
   );

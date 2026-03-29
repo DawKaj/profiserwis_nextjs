@@ -5,15 +5,18 @@ import { Roboto, Roboto_Mono, Rubik, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Cookies from "@/components/cookies";
 import AsidePanel from "@/components/aside";
-import BottomBar from "@/components/bottombar";
 
 const roboto = Roboto({
+  variable: "--font-roboto",
   weight: "400",
 });
 
-const robotoMono = Roboto_Mono({});
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
+});
 
 const rubik = Rubik({
+  variable: "--font-rubik",
   weight: "400",
 });
 
@@ -38,22 +41,15 @@ export default function RootLayout({
       suppressHydrationWarning
       className="{roboto.className} {robotoMono.className} {rubik.className} {jetbrainsMono.className}"
     >
-      <body
-        className="flex flex-col max-w-300 bg-g-100 dark:bg-g-200 text-g-400"
-        style={{ height: "100vh", margin: "auto" }}
-      >
+      <body className="flex flex-col bg-g-100 dark:bg-g-200 text-g-400">
         <ThemeProvider attribute="class" defaultTheme="system">
           <Cookies />
           <div className="flex flex-row h-full">
-            <AsidePanel />
-            <main
-              className="max-w-225 h-full flex flex-col  mx-auto justify-center md:text-left"
-              style={{ padding: "4rem" }}
-            >
+            <main className="max-w-225 md:ml-75 h-full flex flex-col p-16 md:pt-32 justify-center md:text-left">
+              <AsidePanel />
               {children}
             </main>
           </div>
-          <BottomBar />
         </ThemeProvider>
       </body>
     </html>

@@ -39,7 +39,7 @@ export const generatePDF = (
   // Stopka z werdyktem
   const finalY = (doc as any).lastAutoTable.finalY + 10;
   doc.setFontSize(12);
-  doc.setTextColor(...(results.isSafe ? [22, 101, 52] : [185, 28, 28]));
+  // doc.setTextColor(...(results.isSafe ? [22, 101, 52] : [185, 28, 28]));
   doc.text(
     results.isSafe
       ? "STATUS: Dobor poprawny - spelnia norme spadku napiecia < 3%."
